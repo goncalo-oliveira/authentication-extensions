@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Faactory.Extensions.Authentication</RootNamespace>
     <AssemblyName>faactory.extensions.authentication</AssemblyName>
     <PackageId>Faactory.Extensions.Authentication</PackageId>
-    <Version>1.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Goncalo Oliveira</Authors>
     <Description>ASPNET Authentication Extensions</Description>
     <RepositoryUrl>https://github.com/goncalo-oliveira/authentication-extensions</RepositoryUrl>

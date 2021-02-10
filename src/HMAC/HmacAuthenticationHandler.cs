@@ -68,7 +68,7 @@ namespace Faactory.Extensions.Authentication
                 {
                     using ( var md5 = MD5.Create() )
                     {
-                        var hash = await md5.ComputeHashAsync( ms );
+                        var hash = md5.ComputeHash( ms );
 
                         contentBase64 = Convert.ToBase64String( hash );
                     }
@@ -77,7 +77,7 @@ namespace Faactory.Extensions.Authentication
 
             // the hmac_hash is generated from the following values
             // random_key HTTP_METHOD url [content_hash]
-            var value = string.Join( (char)0x20, new string[]
+            var value = string.Join( " ", new string[]
             {
                 hmacValues[0],
                 Context.Request.Method,

@@ -20,7 +20,7 @@ public void ConfigureServices( IServiceCollection services )
     ...
 
     // add your services here.
-    services.SecretAuthentication( schemeOptions =>
+    services.AddSecretAuthentication( schemeOptions =>
     {
         schemeOptions.Secret = "secret-value";
         schemeOptions.SecretKeyHeader = "X-Secret-Key"; // optional
