@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Primitives;
 using Microsoft.Net.Http.Headers;
 
 namespace Faactory.Extensions.Authentication
@@ -34,7 +35,9 @@ namespace Faactory.Extensions.Authentication
             // we look into Authorization: Secret value
             // if we do have a header key, we retrieve the value directly
 
-            var value = Context.Request.Headers[secretKeyHeader];
+            var value = !string.IsNullOrEmpty( secretKeyHeader )
+                ? Context.Request.Headers[secretKeyHeader]
+                : StringValues.Empty;
 
             if ( string.IsNullOrEmpty( value ) )
             {
